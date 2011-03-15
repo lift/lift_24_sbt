@@ -1,6 +1,6 @@
-import _root_.org.mortbay.jetty.Connector
-import _root_.org.mortbay.jetty.Server
-import _root_.org.mortbay.jetty.webapp.WebAppContext
+import org.mortbay.jetty.Connector
+import org.mortbay.jetty.Server
+import org.mortbay.jetty.webapp.WebAppContext
 import org.mortbay.jetty.nio._
 
 object RunWebApp extends Application {

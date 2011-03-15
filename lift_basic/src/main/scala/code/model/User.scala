@@ -1,9 +1,9 @@
-package code {
-package model {
+package code
+package model
 
-import _root_.net.liftweb.mapper._
-import _root_.net.liftweb.util._
-import _root_.net.liftweb.common._
+import net.liftweb.mapper._
+import net.liftweb.util._
+import net.liftweb.common._
 
 /**
  * The singleton that has methods for accessing the database
@@ -34,5 +34,3 @@ class User extends MegaProtoUser[User] {
   }
 }
 
-}
-}

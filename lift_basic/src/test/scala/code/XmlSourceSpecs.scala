@@ -38,7 +38,7 @@ object XmlSourceSpecs extends Specification {
 	  try {
 	    XML.loadFile(file)
 	  } catch {
-	    case e: _root_.org.xml.sax.SAXParseException => failed = file :: failed
+	    case e: org.xml.sax.SAXParseException => failed = file :: failed
 	  }
 	}
 	if (file.isFile && handledXHtml(file.getName)) {

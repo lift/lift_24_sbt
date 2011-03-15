@@ -1,11 +1,11 @@
 package code
 
-import _root_.java.io.File
-import _root_.junit.framework._
+import java.io.File
+import junit.framework._
 import Assert._
-import _root_.scala.xml.XML
-import _root_.net.liftweb.util._
-import _root_.net.liftweb.common._
+import scala.xml.XML
+import net.liftweb.util._
+import net.liftweb.common._
 
 object AppTest {
   def suite: Test = {
@@ -14,7 +14,7 @@ object AppTest {
   }
 
   def main(args : Array[String]) {
-    _root_.junit.textui.TestRunner.run(suite)
+    junit.textui.TestRunner.run(suite)
   }
 }
 
@@ -52,11 +52,11 @@ class AppTest extends TestCase("app") {
         try {
           XML.loadFile(file)
         } catch {
-          case e: _root_.org.xml.sax.SAXParseException => failed = file :: failed
+          case e: org.xml.sax.SAXParseException => failed = file :: failed
         }
       }
       if (file.isFile && handledXHtml(file.getName)) {
-        PCDataXmlParser(new _root_.java.io.FileInputStream(file.getAbsolutePath)) match {
+        PCDataXmlParser(new java.io.FileInputStream(file.getAbsolutePath)) match {
           case Full(_) => // file is ok
           case _ => failed = file :: failed
         }
