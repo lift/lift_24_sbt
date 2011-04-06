@@ -72,6 +72,9 @@ class Boot {
     LiftRules.htmlProperties.default.set((r: Req) =>
       new Html5Properties(r.userAgent))    
 
+    // Use jQuery 1.4
+    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
+
     // Make a transaction span the whole HTTP request
     S.addAround(DB.buildLoanWrapper)
   }

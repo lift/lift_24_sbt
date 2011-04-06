@@ -40,6 +40,9 @@ class Boot {
     LiftRules.ajaxEnd =
       Full(() => LiftRules.jsArtifacts.hide("ajax-loader").cmd)
 
+    // Use jQuery 1.4
+    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
+
     // Force the request to be UTF-8
     LiftRules.early.append(_.setCharacterEncoding("UTF-8"))
 

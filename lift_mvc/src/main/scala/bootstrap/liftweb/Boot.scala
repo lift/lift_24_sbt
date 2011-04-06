@@ -30,6 +30,9 @@ class Boot {
     // Force the request to be UTF-8
     LiftRules.early.append(_.setCharacterEncoding("UTF-8"))
 
+    // Use jQuery 1.4
+    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
+
     LiftRules.dispatch.append(RootController)
   }
 }
