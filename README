@@ -1,14 +1,9 @@
-This file contains multiple Lift project templates:
+This repository contains tempaltes for Lift project.
 
-- lift_basic is a basic Lift application with a built-in user class
-             and nice use of Blueprint CSS and HTML5
+These templates offer a starting point for your Lift-based project.
 
-- lift_xhtml is a basic Lift application with a built-in user class
-             and nice use of Blueprint CSS and XHTML
+If you want to start with Scala 2.8.1, use the templates in the scala_28 directory
 
-- lift_blank is a blank Lift project that does not have any model
-             or CSS
+If you want to start with Scala 2.9.0-1, use the templates in the scala_29 directory
 
-- lift_mvc   is a Lift project that uses Lift's MVC support rather
-             than view-first.  No model stuff, but Blueprint CSS
-
+Questions, feedback, etc. please join the conversation at https://groups.google.com/forum/#!forum/liftweb
