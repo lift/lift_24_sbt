@@ -10,6 +10,8 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
   // this line
   // override def scanDirectories = Nil
 
+  lazy val JavaNet = "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
+
   override def libraryDependencies = Set(
     "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
     "org.mortbay.jetty" % "jetty" % "6.1.26" % "test",
