@@ -1,7 +1,7 @@
 import sbt._
 
 class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
-  val liftVersion = property[Version].value.toString
+  val liftVersion = property[Version]
 
   // uncomment the following if you want to use the snapshot repo
   //  val scalatoolsSnapshot = ScalaToolsSnapshots
@@ -13,7 +13,7 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
   lazy val JavaNet = "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
   override def libraryDependencies = Set(
-    "net.liftweb" %% "lift-webkit" % liftVersion % "compile",
+    "net.liftweb" %% "lift-webkit" % liftVersion.value.toString % "compile",
     "org.mortbay.jetty" % "jetty" % "6.1.26" % "test",
     "junit" % "junit" % "4.7" % "test",
     "ch.qos.logback" % "logback-classic" % "0.9.26",
