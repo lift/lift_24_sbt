@@ -12,6 +12,8 @@ class LiftProject(info: ProjectInfo) extends DefaultWebProject(info) {
 
   lazy val JavaNet = "Java.net Maven2 Repository" at "http://download.java.net/maven/2/"
 
+  val SonatypeRep = "Sonatype scala-tools repo" at "https://oss.sonatype.org/content/groups/scala-tools/"
+
   override def libraryDependencies = Set(
     "net.liftweb" %% "lift-webkit" % liftVersion.value.toString % "compile",
     "org.mortbay.jetty" % "jetty" % "6.1.26" % "test",
