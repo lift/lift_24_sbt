@@ -6,11 +6,13 @@ import Helpers._
 
 import common._
 import http._
+import js.jquery.JQueryArtifacts
 import sitemap._
 import Loc._
 import mapper._
 
 import code.model._
+import net.liftmodules.JQueryModule
 
 
 /**
@@ -54,8 +56,10 @@ class Boot {
     // each page, just comment this line out.
     LiftRules.setSiteMapFunc(() => sitemapMutators(sitemap))
 
-    // Use jQuery 1.4
-    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
+    //Init the jQuery module, see http://liftweb.net/jquery for more information.
+    LiftRules.jsArtifacts = JQueryArtifacts
+    JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
+    JQueryModule.init()
 
     //Show the spinny image when an Ajax call starts
     LiftRules.ajaxStart =
