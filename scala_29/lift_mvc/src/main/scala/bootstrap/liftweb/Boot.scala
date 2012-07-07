@@ -8,6 +8,7 @@ import common._
 import http._
 
 import code.controller._
+import net.liftmodules.JQueryModule
 
 
 /**
@@ -19,8 +20,7 @@ class Boot {
     // where to search snippet
     LiftRules.addToPackages("code")
 
-    // Use jQuery 1.4
-    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQuery14Artifacts
+    LiftRules.jsArtifacts = net.liftweb.http.js.jquery.JQueryArtifacts
 
     //Show the spinny image when an Ajax call starts
     LiftRules.ajaxStart =
@@ -34,5 +34,13 @@ class Boot {
     LiftRules.early.append(_.setCharacterEncoding("UTF-8"))
 
     LiftRules.dispatch.append(RootController)
+
+    // Use HTML5 for rendering
+    LiftRules.htmlProperties.default.set((r: Req) =>
+      new Html5Properties(r.userAgent))
+
+    //Init the jQuery module, see http://liftweb.net/jquery for more information.
+    JQueryModule.InitParam.JQuery=JQueryModule.JQuery172
+    JQueryModule.init()
   }
 }
